@@ -1,0 +1,159 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Basket</title>
+    <link rel="stylesheet" type="text/css" href="index.css" media="all" />
+    <style>
+      .hide-button {
+        display: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <main>
+      <div class="basket">
+        <div class="basket-module">
+          <label for="promo-code">Enter a promotional code</label>
+          <input
+            id="promo-code"
+            type="text"
+            name="promo-code"
+            class="promo-code-field"
+          />
+          <button
+            style="cursor: pointer"
+            onclick="sale()"
+            class="promo-code-cta"
+          >
+            Apply
+          </button>
+        </div>
+        <div class="basket-labels">
+          <ul>
+            <li class="item item-heading">Item</li>
+            <li class="price">Price</li>
+            <li class="quantity">Quantity</li>
+            <li class="subtotal">Subtotal</li>
+          </ul>
+        </div>
+        <div class="basket-product">
+          <div class="item">
+            <div class="product-image">
+              <img
+                src="https://sites.create-cdn.net/siteimages/28/4/9/284928/15/7/9/15798435/919x1208.jpg?1505296014"
+                alt="Placholder Image 2"
+                class="product-frame"
+              />
+            </div>
+            <div class="product-details">
+              <h1>Lace Dress</h1>
+              <p><strong>Navy, Size 18</strong></p>
+              <p>Product Code - 232321939</p>
+            </div>
+          </div>
+          <div class="price">26.00</div>
+          <div class="à">
+            <input
+              onchange="productsHandler()"
+              type="number"
+              value="4"
+              min="1"
+              class="quantity-field"
+            />
+          </div>
+          <div class="subtotal"></div>
+          <div class="remove">
+            <button
+              style="cursor: pointer"
+              name="removebutton"
+              onclick="removeItem(this)"
+            >
+              Remove
+            </button>
+          </div>
+        </div>
+        <div class="basket-product">
+          <div class="item">
+            <div class="product-image">
+              <img
+                src="https://images.ctfassets.net/ltric1hkjv72/AJKWUotVlrcBL3C4PkYzr/d7a8657440e2b42d98018615c8a7430b/classic-turkish-cotton-robe_fawn_lightbox_cpg_0325.jpg"
+                alt="Placholder Image 2"
+                class="product-frame"
+              />
+            </div>
+            <div class="product-details">
+              <h1>Midi Dress</h1>
+              <p><strong>Navy, Size 10</strong></p>
+              <p>Product Code - 232321939</p>
+            </div>
+          </div>
+          <div class="price">30.00</div>
+          <div class="quantity">
+            <input
+              onchange="productsHandler()"
+              type="number"
+              value="1"
+              min="1"
+              class="quantity-field"
+            />
+          </div>
+          <div class="subtotal"></div>
+          <div class="remove">
+            <button
+              name="removebutton"
+              style="cursor: pointer"
+              onclick="removeItem(this)"
+            >
+              Remove
+            </button>
+          </div>
+        </div>
+      </div>
+      <aside>
+        <div class="summary">
+          <div class="summary-total-items">
+            <span class="total-items"></span> Items in your Bag
+          </div>
+          <div class="summary-subtotal">
+            <div class="summary-promo hide">
+              <div class="promo-title">Promotion</div>
+              <div class="promo-value final-value" id="basket-promo"></div>
+            </div>
+          </div>
+          <div class="summary-delivery">
+            <select
+              id="pm"
+              onchange="doSomething();"
+              name="delivery-collection"
+              class="summary-delivery-selection"
+            >
+              <option value="0" selected="selected">
+                Select payement method
+              </option>
+              <option value="Delivery">at Delivery</option>
+              <option value="online">Online</option>
+            </select>
+          </div>
+          <div class="sale-details"></div>
+          <div class="summary-total">
+            <div class="total-title">Total</div>
+            <div class="total-value final-value" id="basket-total"></div>
+          </div>
+          <div id="summary-checkout" class="summary-checkout hide-button">
+            <button onclick="payandcheckout()" class="button">
+              Pay & CheckOut
+            </button>
+          </div>
+          <div id="summary-address" class="summary-checkout hide-button">
+            <button onclick="checkout()" class="button">CheckOut</button>
+          </div>
+        </div>
+      </aside>
+    </main>
+  </body>
+  <script src="code.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+</html>
